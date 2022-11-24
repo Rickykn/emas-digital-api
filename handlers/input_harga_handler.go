@@ -14,3 +14,10 @@ func HandlerInputHarga(w http.ResponseWriter, r *http.Request) {
 	helpers.WriteResponse(w, http.StatusOK, "Success add input harga", b)
 
 }
+
+func GetHarga(w http.ResponseWriter, r *http.Request) {
+	b := services.CheckPrice()
+
+	helpers.WriteResponse(w, http.StatusOK, "Get Success", b)
+
+}
