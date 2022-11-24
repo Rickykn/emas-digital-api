@@ -5,3 +5,9 @@ type Account struct {
 	Number         int `json:"number"`
 	Account_amount int `json:"Account_amount"`
 }
+
+type TopupDTO struct {
+	Gram           float32 `json:"gram"`
+	Price          int     `json:"price"`
+	Account_amount int     `json:"Account_amount"`
+}

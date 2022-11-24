@@ -11,7 +11,6 @@ import (
 
 func ReceiveFromKafka() {
 
-	// fmt.Println("Start receiving from Kafka")
 	c, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": "localhost:9092",
 		"group.id":          "group-id-1",
@@ -37,12 +36,12 @@ func ReceiveFromKafka() {
 
 }
 
-func saveToDb(jobString string) {
+func saveToDb(input string) {
 
 	DB := database.Get()
 
 	var _price *models.Price
-	b := []byte(jobString)
+	b := []byte(input)
 	err := json.Unmarshal(b, &_price)
 	if err != nil {
 		panic(err)

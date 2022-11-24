@@ -28,6 +28,7 @@ func main() {
 	r.HandleFunc("/", handlers.Home).Methods(http.MethodGet)
 	r.HandleFunc("/input-harga", handlers.HandlerInputHarga).Methods(http.MethodPost)
 	r.HandleFunc("/check-harga", handlers.GetHarga).Methods(http.MethodGet)
+	r.HandleFunc("/topup", handlers.Topup).Methods(http.MethodPost)
 
 	fmt.Println("Server listening on port 8080")
 	err := http.ListenAndServe(":8080", r)

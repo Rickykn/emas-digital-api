@@ -21,3 +21,10 @@ func GetHarga(w http.ResponseWriter, r *http.Request) {
 	helpers.WriteResponse(w, http.StatusOK, "Get Success", b)
 
 }
+
+func Topup(w http.ResponseWriter, r *http.Request) {
+	b := services.Topup(w, r)
+
+	helpers.WriteResponse(w, http.StatusOK, "Success Topup", b)
+
+}
