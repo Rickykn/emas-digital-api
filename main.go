@@ -26,6 +26,7 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/", handlers.Home).Methods(http.MethodGet)
+	r.HandleFunc("/input-harga", handlers.HandlerInputHarga).Methods(http.MethodPost)
 
 	fmt.Println("Server listening on port 8080")
 	err := http.ListenAndServe(":8080", r)
